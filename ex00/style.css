@@ -54,6 +54,11 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Keep anchor destinations below the sticky navigation. */
+main section[id] {
+    scroll-margin-top: 100px;
+}
+
 /* 2. SHARED STYLES */
 
 .container {
@@ -323,11 +328,18 @@ html {
 }
 
 .project-card {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     transition: var(--transition);
+}
+
+.project-card > .btn {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .project-card:hover {
@@ -349,6 +361,9 @@ html {
 }
 
 .project-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     padding: 25px;
 }
 
@@ -363,6 +378,7 @@ html {
 }
 
 .project-tags {
+    margin-top: auto;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -376,6 +392,15 @@ html {
 }
 
 /* 8. HOBBIES */
+
+.hobby-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.hobby-label {
+    margin-top: auto;
+}
 
 .hobby-icon {
     font-size: 35px;
@@ -468,6 +493,28 @@ html {
     height: 9px;
     background: var(--accent);
     border-radius: 50%;
+}
+
+/* BACK TO TOP */
+
+.back-to-top-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 6% 40px;
+}
+
+.back-to-top {
+    gap: 8px;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 16px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.back-to-top:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
 }
 
 /* 10. FOOTER */
