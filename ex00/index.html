@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="top">
 
     <!-- NAVIGATION -->
     <header class="navbar">
@@ -32,6 +32,9 @@
             </nav>
 
             <div class="nav-actions">
+                <button class="menu-toggle" id="menuToggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="Open navigation menu">
+                    &#9776;
+                </button>
                 <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch theme">
                     ☼
                 </button>
@@ -163,7 +166,7 @@
                     </article>
 
                     <article class="skill-card">
-                        <div class="skill-icon">✦</div>my second project
+                        <div class="skill-icon">✦</div>
                         <h3>CSS3</h3>
                         <p>
                             Styling responsive layouts, animations, and modern interfaces.
@@ -190,7 +193,7 @@
                         <div class="skill-icon">W</div>
                         <h3>Microsoft Word</h3>
                         <p>
-                            Creating and formatting documents fmy second projector various purposes.
+                            Creating and formatting documents for various purposes.
                         </p>
                     </article>
 
@@ -331,7 +334,9 @@
                             Playing football, improving my skills, and enjoying the competition.
                         </p>
 
-                        <span class="hobby-tag">SPORTS</span>
+                        <div class="hobby-label">
+                            <span class="hobby-tag">SPORTS</span>
+                        </div>
                     </article>
 
                     <article class="hobby-card">
@@ -342,7 +347,9 @@
                             Exploring new technologies and learning how digital products work.
                         </p>
 
-                        <span class="hobby-tag">LEARNING</span>
+                        <div class="hobby-label">
+                            <span class="hobby-tag">LEARNING</span>
+                        </div>
                     </article>
 
                     <article class="hobby-card">
@@ -353,7 +360,9 @@
                             Enjoying games that challenge my thinking and help me relax.
                         </p>
 
-                        <span class="hobby-tag">ENTERTAINMENT</span>
+                        <div class="hobby-label">
+                            <span class="hobby-tag">ENTERTAINMENT</span>
+                        </div>
                     </article>
 
                     <article class="hobby-card">
@@ -364,7 +373,9 @@
                             Listening to music while relaxing, focusing, or getting inspired.
                         </p>
 
-                        <span class="hobby-tag">INSPIRATION</span>
+                        <div class="hobby-label">
+                            <span class="hobby-tag">INSPIRATION</span>
+                        </div>
                     </article>
 
                 </div>
@@ -398,7 +409,7 @@
 
                     <p class="contact-detail">
                         <br>
-                        <strong>+962 797073066</strong>
+                        <a href="tel:+962797073066"><strong>+962 797073066</strong></a>
                     </p>
 
 
@@ -431,6 +442,12 @@
             </div>
 
         </section>
+        <div class="back-to-top-container">
+            <a href="#top" class="btn btn-primary back-to-top">
+                <span aria-hidden="true">&#8593;</span>
+                Back to Top
+            </a>
+        </div>
     </main>
 
 
