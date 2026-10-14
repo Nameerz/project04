@@ -42,23 +42,28 @@ menuToggle.addEventListener("click", function () {
 });
 
 
-// Close the mobile menu when a navigation link is clicked
+// Close the mobile menu after navigation or when Escape is pressed.
+function closeMobileMenu() {
+    navLinks.classList.remove("open");
+    menuToggle.textContent = "☰";
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
+}
 
 navLinks.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-        navLinks.classList.remove("open");
-
-        menuToggle.textContent = "☰";
-
-        menuToggle.setAttribute("aria-expanded", "false");
-
-        menuToggle.setAttribute(
-            "aria-label",
-            "Open navigation menu"
-        );
-    });
+    link.addEventListener("click", closeMobileMenu);
 });
 
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && navLinks.classList.contains("open")) {
+        closeMobileMenu();
+        menuToggle.focus();
+    }
+});
+
+// Reset mobile menu state whenever the navigation layout changes.
+const mobileNavigation = window.matchMedia("(max-width: 800px)");
+mobileNavigation.addEventListener("change", closeMobileMenu);
 
 // 3. ACTIVE NAVIGATION LINK
 
